@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pupils</title>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+    <h1>Pupils:</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="pupils : ${pupils}">
+            <td th:text="${pupils.id}">pupilId</td>
+            <td th:text="${pupils.firstName}">firstName</td>
+            <td th:text="${pupils.lastName}">lastName</td>
+            <td><a th:href="@{/pupils/edit/{id}(id=${pupils.id})}">Update</a></td>
+            <td><a th:href="@{/pupils/delete/{id}(id=${pupils.id})}">Delete</a></td>
+        </tr>
+    </table>
+    <hr>
+    <button><a href="/addpupilpage">Add pupil</a></button>
+    <button><a href="/">Index page</a></button>
+</body>
+</html>

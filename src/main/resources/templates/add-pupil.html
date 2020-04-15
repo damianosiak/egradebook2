@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add pupil</title>
+    <style>
+        html body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<h1>Add pupil: </h1>
+<hr>
+<form action="#" th:action="@{/addpupil}" th:object="${pupils}" method="post">
+    <list>
+        <ul>First name: <input type="text" th:field="*{firstName}" id="firstname" required></ul>
+        <ul>Last name: <input type="text" th:field="*{lastName}" id="lastname" required></ul>
+        <ul><button type="submit">Add pupil</button></ul>
+    </list>
+</form>
+<hr>
+<button><a href="/pupils">View pupils</a></button>
+<button><a href="/">Index page</a></button>
+</body>
+</html>

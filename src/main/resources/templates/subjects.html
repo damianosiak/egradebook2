@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subjects</title>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+    <h1>Subjects:</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th><a href="/lecturers">Lecturer ID</a></th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="subjects : ${subjects}">
+            <td th:text="${subjects.id}">subjectId</td>
+            <td th:text="${subjects.subjectName}">subjectName</td>
+            <td th:text="${subjects.lecturer}">subjectLecturer</td>
+            <td><a th:href="@{/subjects/edit/{id}(id=${subjects.id})}">Update</a></td>
+            <td><a th:href="@{/subjects/delete/{id}(id=${subjects.id})}">Delete</a></td>
+        </tr>
+    </table>
+    <hr>
+    <button><a href="/addsubjectpage">Add subject</a></button>
+    <button><a href="/">Index page</a></button>
+</body>
+</html>

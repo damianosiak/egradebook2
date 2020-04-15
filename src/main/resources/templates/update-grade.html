@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update grade</title>
+    <style>
+        html body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<h1>Update grade: </h1>
+<hr>
+<form action="#"
+      th:action="@{/grades/update/{id}(id=${grades.id})}"
+      th:object="${grades}"
+      method="post">
+    <list>
+        <ul>Pupil ID: <input type="number" th:field="*{pupil}" id="pupil" readonly></ul>
+        <ul>Grade: <input type="number" th:field="*{grade}" id="grade" min="1" max="6" required></ul>
+        <ul>Subject ID:<input type="number" th:field="*{subject}" id="subject" min="0" required></ul>
+        <ul><input type="submit" value="Update Grade"></ul>
+    </list>
+</form>
+<hr>
+<button><a href="/grades">View grades</a></button>
+<button><a href="/">Index page</a></button>
+</body>
+</html>

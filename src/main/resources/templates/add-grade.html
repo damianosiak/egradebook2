@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add grade</title>
+    <style>
+        html body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+    <h1>Add grade: </h1>
+        <hr>
+        <form action="#" th:action="@{/addgrade}" th:object="${grades}" method="post">
+            <list>
+                <ul>Grade: <input type="number" th:field="*{grade}" id="grade" min="1" max="6" required></ul>
+                <ul><a href="/pupils">Pupil ID:</a> <input type="number" th:field="*{pupil}" id="pupil" min="0" required></ul>
+                <ul><a href="/subjects">Subject ID:</a> <input type="number" th:field="*{subject}" id="subject" min="0" required></ul>
+                <ul><button type="submit">Add grade</button></ul>
+            </list>
+        </form>
+    <hr>
+    <button><a href="/">Index page</a></button>
+</body>
+</html>

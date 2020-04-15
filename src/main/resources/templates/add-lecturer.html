@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add lecturer</title>
+    <style>
+        html body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<h1>Add lecturer: </h1>
+<hr>
+<form action="#" th:action="@{/addlecturer}" th:object="${lecturers}" method="post">
+    <list>
+        <ul>First name: <input type="text" th:field="*{firstName}" id="firstname" required></ul>
+        <ul>Last name: <input type="text" th:field="*{lastName}" id="lastname" required></ul>
+        <ul><button type="submit">Add lecturer</button></ul>
+    </list>
+</form>
+<hr>
+<button><a href="/lecturers">View lecturers</a></button>
+<button><a href="/">Index page</a></button>
+</body>
+</html>

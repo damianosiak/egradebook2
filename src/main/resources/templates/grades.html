@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grades</title>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+    <h1>Grades:</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Grade</th>
+            <th><a href="/pupils">Pupil ID</a></th>
+            <th><a href="/subjects">Subject ID</a></th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="grades : ${grades}">
+            <td th:text="${grades.id}">gradeId</td>
+            <td th:text="${grades.grade}">gradeGrade</td>
+            <td th:text="${grades.pupil}">gradePupil</td>
+            <td th:text="${grades.subject}">gradeSubject</td>
+            <td><a th:href="@{/grades/edit/{id}(id=${grades.id})}">Update</a></td>
+            <td><a th:href="@{/grades/delete/{id}(id=${grades.id})}">Delete</a></td>
+        </tr>
+    </table>
+    <hr>
+    <button><a href="/addgradepage">Add grade</a></button>
+    <button><a href="/">Index page</a></button>
+</body>
+</html>

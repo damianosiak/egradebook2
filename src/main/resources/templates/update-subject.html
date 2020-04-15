@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update subject</title>
+    <style>
+        html body{
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<h1>Update subject: </h1>
+<hr>
+<form action="#"
+      th:action="@{/subjects/update/{id}(id=${subjects.id})}"
+      th:object="${subjects}"
+      method="post">
+    <list>
+        <ul>Subject name: <input type="text" th:field="*{subjectName}" id="subjectName" required></ul>
+        <ul>Lecturer ID: <input type="number" th:field="*{lecturer}" id="lecturer" min="0" required></ul>
+        <ul><input type="submit" value="Update Subject"></ul>
+    </list>
+</form>
+<hr>
+<button><a href="/subjects">View subjects</a></button>
+<button><a href="/">Index page</a></button>
+</body>
+</html>
