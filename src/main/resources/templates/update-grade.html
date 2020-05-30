@@ -10,8 +10,12 @@
             height: 100%;
         }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<!--
 <span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
 <h1>Update grade: </h1>
 <hr>
@@ -29,5 +33,46 @@
 <hr>
 <button><a href="/grades">View grades</a></button>
 <button><a href="/">Index page</a></button>
+-->
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<hr style="clear:both;">
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Update grade</span></h1>
+                </div>
+                <form action="#"
+                      th:action="@{/grades/update/{id}(id=${grades.id})}"
+                      th:object="${grades}"
+                      method="post">
+                    <div class="panel-body">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fPupilId">Pupil ID</label><a href="/pupils" style="float:right;">?</a>
+                                <input type="number" class="form-control" id="fPupilId" min="0" th:field="*{pupil}" placeholder="Pupil ID" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="fGrade">Grade</label>
+                                <input type="number" class="form-control" id="fGrade" th:field="*{grade}" placeholder="Grade" min="1" max="6" step="0.5" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fSubjectId">Subject ID</label><a href="/subjects" style="float:right;">?</a>
+                            <input type="number" class="form-control" id="fSubjectId" min="0" th:field="*{subject}" placeholder="Subject ID" required>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="reset" class="btn btn-danger" style="width:50%;float:left;">Reset</button>
+                        <button type="submit" class="btn btn-success" style="width:50%">Update grade</button>
+                        <a href="#" class="btn btn-default" role="button" style="width:50%;float:left;" onclick="javascript:window.history.back()">Back</a>
+                        <a href="/grades" class="btn btn-default" role="button" style="width:50%">Back to grades</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

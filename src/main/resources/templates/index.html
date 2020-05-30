@@ -3,20 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<!--
     <h1>Select:</h1>
+    <div class="list-group">
     <list>
-        <ul><button><a href="/addgradepage">Add grade</a></button></ul>
-        <ul><button><a href="/grades">View grades</a></button></ul>
-        <ul><button><a href="/addpupilpage">Add pupil</a></button></ul>
-        <ul><button><a href="/pupils">View pupils</a></button></ul>
-        <ul><button><a href="/addsubjectpage">Add subject</a></button></ul>
-        <ul><button><a href="/subjects">View subjects</a></button></ul>
-        <ul><button><a href="/addlecturerpage">Add lecturer</a></button></ul>
-        <ul><button><a href="/lecturers">View lecturers</a></button></ul>
-    </list>
+        <ul><button><a href="/addgradepage" class="list-group-item list-group-item-action">Add grade</a></button></ul>
+        <ul><button><a href="/grades" class="list-group-item list-group-item-action">View grades</a></button></ul>
+        <ul><button><a href="/addpupilpage" class="list-group-item list-group-item-action">Add pupil</a></button></ul>
+        <ul><button><a href="/pupils" class="list-group-item list-group-item-action">View pupils</a></button></ul>
+        <ul><button><a href="/addsubjectpage" class="list-group-item list-group-item-action">Add subject</a></button></ul>
+        <ul><button><a href="/subjects" class="list-group-item list-group-item-action">View subjects</a></button></ul>
+        <ul><button><a href="/addlecturerpage" class="list-group-item list-group-item-action">Add lecturer</a></button></ul>
+        <ul><button><a href="/lecturers" class="list-group-item list-group-item-action">View lecturers</a></button></ul>
+    </list></div>
     <hr>
     <span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+-->
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<hr style="clear:both;">
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title" style="text-align:center;font-weight:bold;">eGradeBook</span></h1>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pupils</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/pupils">All pupils</a>
+                                <a class="dropdown-item" href="/addpupilpage">Add pupil</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Grades</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/grades">All grades</a>
+                                <a class="dropdown-item" href="/addgradepage">Add grade</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Subjects</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/subjects">All subjects</a>
+                                <a class="dropdown-item" href="/addsubjectpage">Add subject</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lecturers</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/lecturers">All lecturers</a>
+                                <a class="dropdown-item" href="/addlecturerpage">Add lecturer</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

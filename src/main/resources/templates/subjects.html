@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Subjects</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<!--
 <span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
     <h1>Subjects:</h1>
     <table border="1">
@@ -26,5 +30,44 @@
     <hr>
     <button><a href="/addsubjectpage">Add subject</a></button>
     <button><a href="/">Index page</a></button>
+-->
+<span style="float:right">Damian Osiak | 40843 | WSB Cieszyn | Informatyka niestacjonarnie | I rok II semestr (letni) | 2019/2020</span>
+<hr style="clear:both;">
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Subjects</span></h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-inverse">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th><a href="/lecturers">Lecturer ID</a></th>
+                            <th>Actions</th>
+                            </thead>
+                            <tr th:each="subjects : ${subjects}">
+                                <td th:text="${subjects.id}">subjectId</td>
+                                <td th:text="${subjects.subjectName}">subjectName</td>
+                                <td><a th:href="@{/lecturers/edit/{id}(id=${subjects.lecturer})}" th:text="${subjects.lecturer}"></a></td>
+                                <td>
+                                    <a th:href="@{/subjects/edit/{id}(id=${subjects.id})}">Update</a>
+                                    <a th:href="@{/subjects/delete/{id}(id=${subjects.id})}" onMouseOver="this.style.color='#FF0000'" onMouseOut="this.style.color='#337ab7'">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <a href="/" class="btn btn-default" role="button" style="width:50%;float:left;">Back to menu</a>
+                    <a href="/addsubjectpage" class="btn btn-default" role="button" style="width:50%">Add subject</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
